@@ -2,11 +2,16 @@ package main
 
 import (
 	"fake-web-pasar-api/controller"
+	"fmt"
 	"github.com/gin-gonic/gin"
-	"os"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 	routes := gin.Default()
 	port := os.Getenv("PORT")
 
@@ -14,5 +19,6 @@ func main() {
 
 	v1.POST("get_detail_pasar", controller.GetDetailPasar)
 	v1.POST("get_all_pasar", controller.GetListPasar)
+	fmt.Printf("Listening on port localhost:%s", port)
 	routes.Run(port)
 }

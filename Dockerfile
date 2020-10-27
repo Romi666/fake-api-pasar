@@ -10,6 +10,6 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
 
 RUN chmod +x ./fake-web-pasar-api
 
-EXPOSE 80
+EXPOSE 6767
 
 CMD /app/fake-web-pasar-api
