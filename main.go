@@ -21,6 +21,7 @@ func main() {
 
 	v1.POST("get_detail_pasar", controller.GetDetailPasar)
 	v1.POST("get_all_pasar", controller.GetListPasar)
+	v1.POST("get_all_product", controller.GetAllProduct)
 	fmt.Printf("Listening on port localhost:%s", port)
 	routes.Run(port)
 }
